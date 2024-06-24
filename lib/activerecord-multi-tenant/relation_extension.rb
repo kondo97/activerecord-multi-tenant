@@ -39,7 +39,7 @@ module Arel
       # Build an Arel query
       arel = if eager_loading?
                apply_join_dependency.arel
-             elsif ActiveRecord::VERSION::MAJOR >= 7 && ActiveRecord::VERSION::MINOR >= 2
+             elsif ActiveRecord::VERSION::MAJOR >= 8
                build_arel(klass.connection)
              else
                build_arel
